@@ -1,0 +1,11 @@
+.btn {
+  background-color: rgb(43, 103, 131);
+  color: white;
+  border-radius: 20%;
+  padding: 10px;
+}
+
+.btn:hover {
+  box-shadow: 3px 3px 3px black;
+  background-color: rgb(43, 103, 131, 0.8);
+}
