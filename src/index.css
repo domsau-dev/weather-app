@@ -6,6 +6,8 @@
 
 .item {
   margin-bottom: 20px;
+  text-align: center;
+  margin-left: 0px;
 }
 
 p {
@@ -15,4 +17,8 @@ p {
 
 button:hover {
   cursor: pointer;
+}
+
+li {
+  list-style-type: none;
 }
