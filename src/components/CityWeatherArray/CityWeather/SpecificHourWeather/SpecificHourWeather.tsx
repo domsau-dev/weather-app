@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type WeatherObject from '../../../types/WeatherObject';
+import type WeatherObject from '../../../../types/WeatherObject';
 import styles from './SpecificHourWeather.module.css';
 
 export default function SpecificHourWeather({ item }: { item: WeatherObject }) {

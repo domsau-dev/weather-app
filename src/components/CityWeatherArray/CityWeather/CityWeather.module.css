@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: baseline;
+    overflow-x: auto;
+    width: 80vw;
+}
+
+.item {
+    list-style-type: none;
+    margin-right: 10px;
+}
+
+.btnClose {
+  background-color: rgb(43, 103, 131);
+  color: red;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btnClose:hover {
+  box-shadow: 1px 1px 1px black;
+  background-color: rgb(43, 103, 131, 0.8);
+}

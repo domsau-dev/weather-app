@@ -1,14 +1,16 @@
 import Title from './components/Title/Title'
-import CityWeather from './components/CityWeather/CityWeather'
 import AddCity from './components/AddCity/AddCity'
+import CityWeatherArray from './components/CityWeatherArray/CityWeatherArray'
+import { useState } from 'react';
 
 function App() {
+  const [cityArray, setCityArray] = useState<string[]>([]);
 
   return (
     <div className='container'>
       <Title />
-      <CityWeather />
-      <AddCity />
+      <CityWeatherArray cityArray={cityArray} setCityArray={setCityArray} />
+      <AddCity cityArray={cityArray} setCityArray={setCityArray} />
     </div>
   )
 }

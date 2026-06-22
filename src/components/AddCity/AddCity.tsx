@@ -79,10 +79,15 @@ const cityFilter = (searchValue: string): CityObject[] => {
   });
 }
 
-export default function AddCity() {
+export default function AddCity({ cityArray, setCityArray }: { cityArray: string[], setCityArray: React.Dispatch<React.SetStateAction<string[]>> }) {
   const [addIsClicked, setAddIsClicked] = useState<boolean>(false);
   const [searchedCity, setSearchedCity] = useState<string>('');
-  const [searchResults, setSearchResults] = useState<string[]>([]);
+
+  const clickHandler = (city: string) => {
+    setCityArray([...cityArray, city]);
+    setAddIsClicked(false);
+    setSearchedCity('');
+  }
 
   return (
     <div className="item">
@@ -91,7 +96,7 @@ export default function AddCity() {
         <>
           <label htmlFor="city">Enter city:</label>
           <input type="text" name="city" id="city" value={searchedCity} onChange={(e) => setSearchedCity(e.target.value)} />
-          <span><button title='Abort search' className={styles.btnClose} onClick={() => {setAddIsClicked(false); setSearchedCity('')}}>X</button></span>
+          <span><button title='Abort search' className={styles.btnClose} onClick={() => { setAddIsClicked(false); setSearchedCity('') }}>X</button></span>
           {searchedCity.length > 2 &&
             <ul className={styles.container}>
               {cityFilter(searchedCity).map(({ city, startIndex, endIndex }) => {
@@ -105,11 +110,10 @@ export default function AddCity() {
                   boldedCity = <>{city.slice(0, startIndex)}<b>{city.slice(startIndex, endIndex + 1)}</b>{city.slice(endIndex + 1)}</>;
                 }
 
-                return <li key={city} className={styles.item}>{boldedCity}</li>
+                return <li key={city} className={styles.item} onClick={() => clickHandler(city)}>{boldedCity}</li>
               })}
             </ul>
           }
-
         </>
       }
     </div>
