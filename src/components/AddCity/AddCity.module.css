@@ -1,5 +1,5 @@
 .btn {
-  background-color: rgb(43, 103, 131);
+  background-color: var(--main-btn-color);
   color: white;
   border-radius: 20%;
   padding: 10px;
@@ -7,11 +7,11 @@
 
 .btn:hover {
   box-shadow: 3px 3px 3px black;
-  background-color: rgb(43, 103, 131, 0.8);
+  background-color: var(--main-btn-color-hover);
 }
 
 .btnClose {
-  background-color: rgb(43, 103, 131);
+  background-color: var(--main-btn-color);
   color: red;
   padding-left: 10px;
   padding-right: 10px;
@@ -19,7 +19,7 @@
 
 .btnClose:hover {
   box-shadow: 1px 1px 1px black;
-  background-color: rgb(43, 103, 131, 0.8);
+  background-color: var(--main-btn-color-hover);
 }
 
 .container {
