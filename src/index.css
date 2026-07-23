@@ -13,6 +13,7 @@
   margin-bottom: 20px;
   text-align: center;
   margin-left: 0px;
+  transition: transform 0.5s;
 }
 
 p {
@@ -31,4 +32,8 @@ button:disabled {
 
 li {
   list-style-type: none;
+}
+
+.transition-zero {
+  transition: all 0s !important;
 }
